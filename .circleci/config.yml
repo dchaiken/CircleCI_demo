@@ -17,16 +17,6 @@ jobs:
           key: deps1-{{ .Branch }}
           paths:
             - "venv"
-#  test:
-#    docker:
-#      - image: cicleci/python:3.6.5
-#    steps:
-#      - checkout
-#      - run:
-#          name: Conducting tests
-#          command: |
-#          . venv/bin/activate
-#          python -m pytest
 
            
 #version: 2
