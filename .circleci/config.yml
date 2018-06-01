@@ -14,6 +14,8 @@ jobs:
             . venv/bin/activate
             pip install -r requirements.txt
             python RandomModule.py
+      - store-artifacts:
+          path: testfile.test   
       - save_cache:
           key: deps1-{{ .Branch }}
           paths:
