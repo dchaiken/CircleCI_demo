@@ -22,5 +22,3 @@ jobs:
            command: |
             . venv/bin/activate
             python -m pytest
-
-           
