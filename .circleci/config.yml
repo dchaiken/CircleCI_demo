@@ -6,6 +6,4 @@ jobs:
      steps:
        - checkout
        - run: 
-           command: |
-             pip install pytest
-             python -m pytest
+           command: pip install pytest
