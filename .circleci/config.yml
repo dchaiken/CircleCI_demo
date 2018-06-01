@@ -1,29 +1,29 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/python:3.6.5
-    steps:
-      - checkout
-      - restore_cache:
-          key: deps1-{{ .Branch }}
-      - run: 
-          name: Install pytest
-          command: |
-          python -m venv venv
-          . venv/bin/activate
-          pip install pytest
-      - save_cache:
-          key: deps1-{{ .Branch }}
-          paths:
-            - "venv"
+   build:
+     docker:
+       - image: circleci/python:3.6.5
+     steps:
+       - checkout
+       - restore_cache:
+           key: deps1-{{ .Branch }}
+       - run: 
+           name: Installing pytest
+           command: |
+           python -m venv venv
+           . venv/bin/activate
+           pip install pytest
+       - save_cache:
+           key: deps1-{{ .Branch }}
+           paths:
+             - "venv"
 #  test:
 #    docker:
 #      - image: circleci/python:3.6.5
 #    steps:
 #      - checkout
 #      - run:
-#          name: Conduct tests
+#          name: Conducting tests
 #          command: |
 #          . venv/bin/activate
 #          python -m pytest
