@@ -6,5 +6,7 @@ jobs:
      steps:
        - checkout
        - run: 
-           command: 
+           command: |
+            python -m venv venv
+            . venv/bin/activate
             pip install pytest
