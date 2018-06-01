@@ -8,11 +8,11 @@ jobs:
       - restore_cache:
           key: deps1-{{ .Branch }}
       - run: 
-          name: Installing pytest
+          name: Installing requirements
           command: |
             python -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt
+            pip install -r requirements
       - save_cache:
           key: deps1-{{ .Branch }}
           paths:
