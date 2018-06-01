@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build-job:
     docker:
       - image: circleci/python:3.6.5
     steps:
@@ -38,9 +38,9 @@ jobs:
               python RandomModule.py
 workflows:
   version: 2
-  build-test-deploy:
+  build_test_deploy:
     jobs:
-      - build
+      - build-job
       - test
       - deploy:
           requires:
