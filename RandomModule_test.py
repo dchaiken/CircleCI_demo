@@ -5,4 +5,4 @@ def test_adder():
     assert RandomModule.adder("Hello ", "there!")== "Hello there!"
 
 def test_that_fails():
-    assert True
+    assert False
