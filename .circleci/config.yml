@@ -12,10 +12,13 @@ jobs:
           command: |
             python -m venv venv
             . venv/bin/activate
+            mkdir workspace
             pip install -r requirements.txt
             python RandomModule.py
-      - store-artifacts:
-          path: testfile.test   
+      - persist-to-workspace:
+          root: workspace
+          paths: 
+            - testfile.test
       - save_cache:
           key: deps1-{{ .Branch }}
           paths:
@@ -25,6 +28,8 @@ jobs:
       - image: circleci/python:3.6.5
     steps:
       - checkout
+      - attach_workspace:
+          at: /tmp/workspace
       - restore_cache:
           key: deps1-{{ .Branch }}
       - run:
