@@ -16,7 +16,7 @@ jobs:
             pip install -r requirements.txt
             python writefile.py
       - persist-to-workspace:
-          root: tmp
+          root: .
           paths: 
             - testfile.test
       - save_cache:
