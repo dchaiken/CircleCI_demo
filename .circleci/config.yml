@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.5
+      - image: dacut/amazon-linux-python-3.6
     steps:
       - checkout
       - restore_cache:
@@ -35,7 +35,6 @@ jobs:
           name: Conducting tests
           command: |
             . venv/bin/activate
-            ls
             python -m pytest
   deploy:
     docker:
