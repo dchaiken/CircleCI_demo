@@ -8,6 +8,6 @@ def test_that_fails():
     assert True
 
 def test_read_file():
-    f = open('tmp/testfile.test', 'r')
+    f = open('./testfile.test', 'r')
     assert f.readline() == "I am a file"
     f.close()
