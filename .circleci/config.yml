@@ -10,10 +10,10 @@ jobs:
       - run:
           name: Installing requirements
           command: |
-            python -m venv venv
+            python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt
-            python writefile.py
+            pip-3.6 install -r requirements.txt
+            python3 writefile.py
       - persist-to-workspace:
           root: .
           paths:
