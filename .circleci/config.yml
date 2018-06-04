@@ -7,17 +7,16 @@ jobs:
       - checkout
       - restore_cache:
           key: deps1-{{ .Branch }}
-      - run: 
+      - run:
           name: Installing requirements
           command: |
             python -m venv venv
             . venv/bin/activate
-            mkdir workspace
             pip install -r requirements.txt
             python writefile.py
       - persist-to-workspace:
           root: .
-          paths: 
+          paths:
             - testfile.test
       - save_cache:
           key: deps1-{{ .Branch }}
@@ -29,13 +28,14 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /tmp/
+          at: .
       - restore_cache:
           key: deps1-{{ .Branch }}
       - run:
           name: Conducting tests
           command: |
             . venv/bin/activate
+            ls
             python -m pytest
   deploy:
     docker:
