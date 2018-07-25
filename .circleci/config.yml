@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: dacut/amazon-linux-python-3.6
+      - image: circleci/node:10.5-browsers
     steps:
       - checkout
       - restore_cache:
